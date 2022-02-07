@@ -26,9 +26,12 @@ function capitalA(s) {
 which end with io (example@example.io) */
 
 function ioEmail(email) {
-  let regex2 = /^[^\W]*[@]+\w+[.io]*$/gi;
-
-  return regex2.test(email);
+  let emailTest = email.match(/^[\w]+@([\w-])+[\w-].io$/g);
+  if (emailTest != null) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
